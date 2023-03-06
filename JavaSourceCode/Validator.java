@@ -157,4 +157,19 @@ public class Validator {
         return true;
     }
 	
+    public static Boolean isEmail(String email) {
+        if (!singleAtSign(email)) {
+            return false;
+        }
+
+        // split email address
+        String prefix = fetchBeforeAt(email);
+        String domain = fetchAfterAt(email);
+
+        if (isPrefix(prefix) && isDomain(domain)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
