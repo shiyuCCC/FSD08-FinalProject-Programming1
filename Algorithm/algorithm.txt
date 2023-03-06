@@ -1,1 +1,12 @@
 Algorithm for methods
+
+isAlphaNum()
+
+1.define data type of arg and return
+2.creat check if the input is alphanumeric. Use ASCII values
+3.return value
+
+isSpecialChar()
+1.define data type of args and return
+check 
+2.return value
