@@ -195,13 +195,13 @@ public class Validator {
             if (Character.isUpperCase(ch)) {
                 uppercaseFlag = true;
             }
-            else if (!Character.isLowerCase(ch)) {
+            else if (Character.isLowerCase(ch)) {
                 lowercaseFlag = true;
             }
             else if (Character.isDigit(ch)) {
                 numberFlag = true;
             }
-            else if (!isSpecialChar(ch, true)) {
+            else if (isSpecialChar(ch, true)) {
                 specialCharFlag = true;
             }else{
                 return false;
