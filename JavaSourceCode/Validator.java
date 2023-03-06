@@ -6,7 +6,6 @@ public class Validator {
 		
 		
 		System.out.print(singleAtSign("A@b@c@d"));
-
 	}
 	
 	public static boolean isAlphaNum(char input) {
@@ -172,4 +171,50 @@ public class Validator {
             return false;
         }
     }
+	public static Boolean safePassword(String password) {
+        int length = password.length();
+        Boolean uppercaseFlag = false;
+        Boolean lowercaseFlag = false;
+        Boolean numberFlag = false;
+        Boolean specialCharFlag = false;
+        int count = 0;
+
+        if (length < 7 || length > 15) {
+            return false;
+        }
+    
+        for (int i = 0; i < length; ++i) {
+            char ch = password.charAt(i);
+            if (isAlphaNum(ch)){
+                count ++;
+                if (count < 1){
+                    return false;
+                }
+            }
+            
+            if (Character.isUpperCase(ch)) {
+                uppercaseFlag = true;
+            }
+            else if (!Character.isLowerCase(ch)) {
+                lowercaseFlag = true;
+            }
+            else if (Character.isDigit(ch)) {
+                numberFlag = true;
+            }
+            else if (!isSpecialChar(ch, true)) {
+                specialCharFlag = true;
+            }else{
+                return false;
+            }
+            for (int j = 0; j < length; ++i) {
+                if (password.charAt(i) == password.charAt(j)) {
+                    return false;
+                }
+
+            }
+        }
+
+        return true;
+    }
+
 }
