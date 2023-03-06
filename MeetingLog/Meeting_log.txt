@@ -1,4 +1,4 @@
-First Meeting Summary:
+1st Meeting Summary:
 
 Date: March 3, 2023 
 Attendees: Xuerun, Shiyu
@@ -16,3 +16,27 @@ Action Items:
 
 1.Verify account connections to the shared file (Github repo, Miro, Eclipse).
 2.Try to write 2-3 methods, including pseudocode, individually over the weekend.
+
+
+-----------------------
+2nd Meeting Summary:
+
+Date: March 6, 2023 
+Attendees: Xuerun, Shiyu
+Meeting Minutes Taker: Shiyu
+
+Agenda:
+
+1. The group double-checked the commits in the source code to ensure that there were no conflicts.
+2. Methods 1-10 have been combined in the validator.java file.
+3. The group has decided to set the deadline for the completion of the source code at 12:00 pm on March 7th.
+4. The group has roughly planned the workflow of the project and the deadlines for each task.
+
+Action Items:
+
+1. Complete writing and testing all the methods.
+2. Confirm with Stephanie regarding questions related to the requirements of the Word document.
+
+-----------------
+
+
