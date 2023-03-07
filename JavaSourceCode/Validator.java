@@ -101,6 +101,9 @@ public class Validator {
     }
 
     public static Boolean isDomain(String domain) {
+        // convert all characters to lower case
+        domain = domain.toLowerCase();
+        
         // split the domain by periods
     	String[] split = domain.split("\\.");
         int numSplit = split.length;
@@ -205,12 +208,12 @@ public class Validator {
                 // if this char is a special char
                 if (isSpecialChar(c, false)) {
 
-                    // if this special char is the last char of domain, domain is invalid
+                    // if this special char is the last char of username, username is invalid
                     if (i == length - 1) {
                         return "";
                     }
 
-                    // if the next char after this special char is not an alphanumeric char, domain
+                    // if the next char after this special char is not an alphanumeric char, username
                     // is invalid
                     if (!isAlphaNum(username.charAt(i + 1))) {
                         return "";
