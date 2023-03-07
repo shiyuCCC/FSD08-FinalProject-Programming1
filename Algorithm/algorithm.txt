@@ -71,7 +71,20 @@ isPrefix()
 isDomain()
 
 1. Create method with the required input data type and output data type.
-2. Split the input string by '.' 
+2. Split the input string by '.' into an array called split with two substrings.
+3. Initialize an int variable numSplit to store the numbers of the characters in the input string.
+4. Check if the string length not equal to 2, if not return false.
+5. Check the characters contained in the two portions meet the requirement.
+   5.1 Initialize two string variables of the substrings of the splited array as firstPortion and secondPortion.
+   5.2 Initialize two int variables of the length of the two portions.
+   5.3 Loop each character to check
+       5.3.1 Check if any of the characters of the firstPortion isn't a alphanumeric or period, dash, return false.
+       5.3.2 Check if the character in the firstPortion is a dash, period or underscore.
+          5.3.2.1 Check if it is the last character, if yes return false
+          5.3.2.2 Check if the character behind it isn't a alphanumeric character, if not return false.
+   5.4 Check if the length of the second portion < 2, if yes return false
+   5.5 Check if the characters in the secondPortion are between a to z, if not return false.
+6. Return the value.
 
 ---------------------------------------
 
@@ -79,26 +92,22 @@ isDomain()
 isSafePassword()
 
 1. Create method with the required input data type and output data type.
-2. Check if there is at least one alphanumeric using isAlphaNum method.
-   2.1 Initialize int count A
-   2.2 Use for loop check every character, if it's an alphanumeric, countA+1
-   2.3 If statement check if countA<1 return false.
-   
-3. Check if the number of characters is between 7 and 15 inclusively, if not return false.
-4. Check if there is at least one uppercase..., if not return false.
-   4.1 Write method for checking "." "-" "_" individually
-   4.2 Create int count for each category to record the times appeared for each.
-   4.3 Use for loop to check every character,record in the corresponding count variable for each appearance.
-   4.4 Check if every count variable for uppercase, lowercase and numbers > 1
-   4.5 Check if the count variable of period, dash and under score has at least one >1
-   if not return false
-   
-5. Check if the same character  appears no more than 2 times.
-   5.1 Create a count variable to record the times of the same character appears
-   5.2 Use for loop to check every character if there is two more same characters behind
-   if not return false.
-   
-6. Return the value
+2. Initialize int variable to store the length of the input password
+3. Initialize and set the boolean variables of uppercase,lowercase,number, special characters as false.
+4. Initialize int variable countAN to count occurance of alphanumeric char.
+5. Check if the length is between 7 and 15, if not return false.
+6. Loop every character in the password string.
+   6.1 Initialize char variable of each character.
+   6.2 Check if the two same chars appear consecutively, if yes return false
+   6.3 If the char is an alphanumeric character, + 1 to the count variable created in step 4
+   6.4 If the char is an uppercase char, set boolean uppearcase to true.
+   6.5 If the char is a lowercase char, set boolean lowercase to true.
+   6.6 If the char is a number char, set boolean number to true.
+   6.7 If the char is a special char, set boolean special characters to true.
+ 7. Check if the countAN <1, return false.
+ 8. Check if any of the booleans of of uppercase,lowercase,number, special characters is false, return false.
+ 9. Return the value.
+
 
 -------------------------------------
 
