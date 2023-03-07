@@ -2,7 +2,7 @@ public class Validator {
 	
 	public static void main(String[] args) {	
 		
-		System.out.print(safePassword ("H3ll0-WoRld"));
+		System.out.print(isDomain("and..so "));
 		
 	}
 	
@@ -102,7 +102,8 @@ public class Validator {
 
     public static Boolean isDomain(String domain) {
         // split the domain by periods
-        int numSplit = domain.split("\\.").length;
+    	String[] split = domain.split("\\.");
+        int numSplit = split.length;
 
         // if the splitted array length is not 2
         // then number of periods is not 1
@@ -111,8 +112,8 @@ public class Validator {
             return false;
         }
 
-        String firstPortion = domain.split("\\.")[0];
-        String secondPortion = domain.split("\\.")[1];
+        String firstPortion = split[0];
+        String secondPortion = split[1];
         int lengthFirst = firstPortion.length();
         int lengthSecond = secondPortion.length();
         // The first portion

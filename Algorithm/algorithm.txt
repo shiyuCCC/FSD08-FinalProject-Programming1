@@ -2,18 +2,56 @@ Algorithm for methods
 
 isAlphaNum()
 
-1.Define data type of arg and return
-2.Creat check if the input is alphanumeric. Use ASCII values
-3.Return value
+1.Create method with the required input data type and output data type.
+2.Check if the input is alphanumeric. Use ASCII values
+3.Return true else return false
 
 -------------------------------
 
 isSpecialChar()
-1.Define data type of args and return
+
+1.Create method with the required input data type and output data type.
 2.Check if each character meets the requirement
-2.Return value
+2.Return true else return false
 
 ------------------------------------
+isPrefixChar()
+
+1.Create method with the required input data type and output data type.
+2.Check if the input character is alphanumeric (using isAlphaNum()) or if it's special characters (using isSpecialChar())
+3.Return true else return false
+
+------------------------------------
+isDomainChar()
+
+1.Create method with the required input data type and output data type.
+2.Check if the character is alphanumeric character(using isAlphaNum()) or if it's dash or period (using isSpecialChar() with the second value set as false.)
+3.Return true else return false
+
+-------------------------------------
+singleAtSign()
+
+1.Create method with the required input data type and output data type.
+2.Initialize int count to record the appearance of '@'
+3.Check every character in the string and +1 to int count if the character is '@'
+4.Check if count == 1
+5.Return true else return false.
+
+--------------------------------------
+fetchBeforeAt()
+
+1.Create method with the required input data type and output data type.
+2.Split the input string by '@' and fetch the part before '@' using .split()[] method
+3.Return the value.
+
+--------------------------------------- 
+fetchBeforeAt()
+
+1.Create method with the required input data type and output data type.
+2.Split the input string by '@' and fetch the part after '@' using .split()[] method
+3.Return the value.
+
+----------------------------------------
 
 
 isPrefix()
@@ -27,8 +65,17 @@ isPrefix()
      If yes, 
         3.2.1 check if the underscore, period, or dash is the last character, if yes, return false
         3.2.2 check if the character behind underscore, period, or dash is alphanumeric, if not, return false.
-4. output the return value
+4. Return the value
 -------------------------------------
+
+isDomain()
+
+1. Create method with the required input data type and output data type.
+2. Split the input string by '.' 
+
+---------------------------------------
+
+
 isSafePassword()
 
 1. Create method with the required input data type and output data type.
@@ -51,7 +98,7 @@ isSafePassword()
    5.2 Use for loop to check every character if there is two more same characters behind
    if not return false.
    
-6. Output the return value
+6. Return the value
 
 -------------------------------------
 
