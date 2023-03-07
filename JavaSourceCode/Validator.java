@@ -171,47 +171,112 @@ public class Validator {
             return false;
         }
     }
-	public static Boolean safePassword(String password) {
+
+
+	public static String isUsername(String username) {
+        int length = username.length();
+        Boolean ANFlag = false; // flag for alphanumeric
+
+        // contains seven or less characters
+        if (length > 7) {
+            return "";
+        }
+
+        // must start with a period, or dash
+        if (!isSpecialChar(username.charAt(0), false)) {
+            return ""; // check if the first char is special letter
+        }
+
+        for (int i = 0; i < length; ++i) {
+
+            char c = username.charAt(i);
+
+            // check if char is not domain char or '!'
+            if (!isDomainChar(c) || c == '!') {
+                return "";
+            }
+
+            if (isAlphaNum(c)) {
+                ANFlag = true;
+            } else {
+                // if this char is a special char
+                if (isSpecialChar(c, false)) {
+
+                    // if this special char is the last char of domain, domain is invalid
+                    if (i == length - 1) {
+                        return "";
+                    }
+
+                    // if the next char after this special char is not an alphanumeric char, domain
+                    // is invalid
+                    if (!isAlphaNum(username.charAt(i + 1))) {
+                        return "";
+                    }
+                }
+            }
+
+        }
+
+        if (ANFlag == false) {
+            return "";
+        }
+
+        return username.toLowerCase();
+    }
+
+	
+    public static Boolean safePassword(String password) {
         int length = password.length();
         Boolean uppercaseFlag = false;
         Boolean lowercaseFlag = false;
         Boolean numberFlag = false;
         Boolean specialCharFlag = false;
-        int count = 0;
+        int countAN = 0; // count occurance of alphanumeric char
 
+        // check if contains min 7 chars and max 15 chars
         if (length < 7 || length > 15) {
             return false;
         }
-    
+
         for (int i = 0; i < length; ++i) {
             char ch = password.charAt(i);
-            if (isAlphaNum(ch)){
-                count ++;
-                if (count < 1){
-                    return false;
-                }
+            int countRepeat = 0;
+
+            if (isAlphaNum(ch)) {
+                countAN++;
             }
-            
+
             if (Character.isUpperCase(ch)) {
                 uppercaseFlag = true;
-            }
-            else if (Character.isLowerCase(ch)) {
+            } else if (Character.isLowerCase(ch)) {
                 lowercaseFlag = true;
-            }
-            else if (Character.isDigit(ch)) {
+            } else if (Character.isDigit(ch)) {
                 numberFlag = true;
-            }
-            else if (isSpecialChar(ch, true)) {
+            } else if (isSpecialChar(ch, true)) {
                 specialCharFlag = true;
-            }else{
-                return false;
             }
-            for (int j = 0; j < length; ++i) {
+
+            // count how many time charAt(i) is repeated
+            for (int j = i + 1; j < length; ++j) {
                 if (password.charAt(i) == password.charAt(j)) {
+                    countRepeat++;
+                }
+                if (countRepeat > 1) {
                     return false;
                 }
 
             }
+        }
+
+        // check if contains at least one alphanumeric char
+        if (countAN < 1) {
+            return false;
+        }
+
+        // check if Contain at least one uppercase letter, one lowercase letter,
+        // one number, and one period, dash or underscore.
+        if (uppercaseFlag && lowercaseFlag && numberFlag && specialCharFlag == false) {
+            return false;
         }
 
         return true;
