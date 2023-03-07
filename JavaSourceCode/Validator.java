@@ -2,7 +2,7 @@ public class Validator {
 	
 	public static void main(String[] args) {	
 		
-		System.out.print(safePassword ("W0w.Pr0ject"));
+		System.out.print(safePassword ("H3ll0-WoRld"));
 		
 	}
 	
@@ -242,7 +242,11 @@ public class Validator {
 
         for (int i = 0; i < length; ++i) {
             char ch = password.charAt(i);
-            //int countRepeat = 0;
+            
+            // count if two same chars appear consectively
+            if (i < length-1 && ch == password.charAt(i+1)) {
+                return false;
+            }
 
             if (isAlphaNum(ch)) {
                 countAN++;
@@ -257,25 +261,6 @@ public class Validator {
             } else if (isSpecialChar(ch, true)) {
                 specialCharFlag = true;
             }
-
-            // count how many time charAt(i) is repeated
-           /*
-            for (int j = i + 1; j < length; ++j) {
-                if (password.charAt(i) == password.charAt(j)) {
-                    countRepeat++;
-                }
-                if (countRepeat > 0) {
-                    return false;
-                }
-            }
-            */
-            // Revised version for checking the last requirement. -Shiyu
-            if (i<(length-2)) {
-            	if(password.charAt(i)==password.charAt(i+1)) {
-            	return false;
-            }
-            }
-            
         }
 
         // check if contains at least one alphanumeric char
