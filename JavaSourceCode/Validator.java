@@ -25,14 +25,18 @@ public class Validator {
 		
 		if ((isAlphaNum(a)== true) || (isSpecialChar(a, true)==true)) {
 			return true;
-		}else return false;
+		}else {
+			return false;
+		}
 	}
 	
 	
 	public static boolean isDomainChar(char a) {
 		if ((isAlphaNum(a)== true) || (isSpecialChar(a, false)==true)) {
 			return true;
-		}else return false;
+		}else {
+			return false;
+		}
 		
 	}
 
@@ -282,116 +286,4 @@ public class Validator {
     
     
     
- // safePassword - Shiyu -Begin
-	   
-    
-    public static boolean isPeriod(char a){
-    	if (a == '.') {
-	    	return true;
-    	}
-		return false;
-    }
-    
-    public static boolean isDash(char a){
-    	if (a == '-') {
-	    	return true;
-    	}
-		return false;
-    }
-    
-    public static boolean isUnderScore(char a){
-    	if (a == '_') {
-	    	return true;
-    	}
-		return false;
-    }
-
-
-    public static boolean safePasswordSC(String pass) {
-    	//at least one alphanumeric, check if less than one return false.
-    	int countA = 0;
-    	int pLength=pass.length();
-    	for(int i=0;i<pLength;i++) {
-    		char a = pass.charAt(i);
-    		if (isAlphaNum(a) == true) {
-    			countA++;
-    		}
-    	}
-    	
-    	if(countA<1) {
-    		return false;
-    	}
-    	
-    	//min 7 character & max 15 character
-    	if(pLength<7 || pLength>15) {
-    		return false;
-    	}
-    	
-    	//at least one upper...
-    	int upperCount = 0;
-    	int lowerCount = 0;
-    	int numCount = 0;
-    	int periCount =0;
-    	int daCount=0;
-    	int undCount = 0;
-    	
-    	for(int i = 0; i<pLength; i++) {
-    		char check=pass.charAt(i);
-    		if(Character.isUpperCase(check)) {
-    			upperCount++;
-    		}
-    		if(Character.isLowerCase(check)) {
-    			lowerCount++;
-    		}
-    		if(Character.isDigit(check) == true) {
-    			numCount++;
-    		}
-    		if(isPeriod(check) == true) {
-    			periCount++;
-    		}if(isDash(check) == true) {
-    			daCount++;
-    		}
-    		if(isUnderScore(check) == true) {
-    			undCount++;
-    		}
-    		
-    	}
-    	
-    	if(upperCount < 1) {
-    		return false;
-    	}
-    	if(lowerCount < 1) {
-    		return false;
-    	}
-    	if(numCount < 1) {
-    		return false;
-    	}
-    	if(periCount < 1 && daCount<1 && undCount<1) {
-    		return false;
-    	}
-    	
-	
-
-    	// same character must never be repeated more than twice.
-    	for(int i=0; i<pLength;i++) {
-    		char a = pass.charAt(i);
-    		for(int j=i+1; j<pLength;j++) {
-    	    	int repCount = 0;
-    			char b = pass.charAt(j);
-	    		if( a == b) {
-	    			repCount++;
-	    		}
-	    		if(repCount>1) {
-	    			return false;
-    		}
-    		
-    		}
-    	}
-    
-	
-	return true;
-}
-// safePassword-Shiyu- End
-
-
 }
