@@ -2,11 +2,53 @@ Algorithm for methods
 
 isAlphaNum()
 
-1.define data type of arg and return
-2.creat check if the input is alphanumeric. Use ASCII values
-3.return value
+1.Define data type of arg and return
+2.Creat check if the input is alphanumeric. Use ASCII values
+3.Return value
+
+-------------------------------
 
 isSpecialChar()
-1.define data type of args and return
-check 
-2.return value
+1.Define data type of args and return
+2.Check if each character meets the requirement
+2.Return value
+
+------------------------------------
+
+isPrefix()
+
+1. Create method with the required input data type and output data type.
+2. Initialize an int variable as the length of the input string.
+3. Check if string meets the requirements
+     3.1 Check if the there is at least one character, if length<1 then boolean is false
+     3.2 Check if the first character is alphanumeric by using existing method isAlphanumeric(), if not return false
+     3.3 Loop every character to check if they are all prefix, if not return false
+     If yes, 
+        3.2.1 check if the underscore, period, or dash is the last character, if yes, return false
+        3.2.2 check if the character behind underscore, period, or dash is alphanumeric, if not, return false.
+4. output the return value
+-------------------------------------
+isSafePassword()
+
+1. Create method with the required input data type and output data type.
+2. Check if there is at least one alphanumeric using isAlphaNum method.
+   2.1 Initialize int count A
+   2.2 Use for loop check every character, if it's an alphanumeric, countA+1
+   2.3 If statement check if countA<1 return false.
+   
+3. Check if the number of characters is between 7 and 15 inclusively, if not return false.
+4. Check if there is at least one uppercase..., if not return false.
+   4.1 Write method for checking "." "-" "_" individually
+   4.2 Create int count for each category to record the times appeared for each.
+   4.3 Use for loop to check every character,record in the corresponding count variable for each appearance.
+   4.4 Check if every count variable for uppercase, lowercase and numbers > 1
+   4.5 Check if the count variable of period, dash and under score has at least one >1
+   if not return false
+   
+5. Check if the same character  appears no more than 2 times.
+   5.1 Create a count variable to record the times of the same character appears
+   5.2 Use for loop to check every character if there is two more same characters behind
+   if not return false.
+   
+6. Output the return value
+   
