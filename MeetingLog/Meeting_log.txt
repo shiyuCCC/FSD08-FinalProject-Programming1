@@ -39,4 +39,25 @@ Action Items:
 
 -----------------
 
+3rd Meeting Summary:
+
+Date: March 7, 2023 
+Attendees: Xuerun, Shiyu
+Meeting Minutes Taker: Shiyu
+
+Agenda:
+
+1. Questions regarding the Word requirements were clarified.
+2. The existing source code was successfully merged into the shared Java file on Github.
+3. The group discussed and addressed some issues that arose during the code writing process.
+4. Additional planning and deadlines were confirmed.
+
+Action Items:
+
+1. Complete the source code, pseudo code for all the methods and flowchart for the last three method.
+2. Start writing word document:
+Shiyu- Explication of the planning and development of the code
+       Individual assignments
+Xuerun-Problems that arose during the development of the website
+       -Overview of the project,workload,difficulty,comprehension
 

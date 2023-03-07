@@ -263,10 +263,9 @@ public class Validator {
                 if (password.charAt(i) == password.charAt(j)) {
                     countRepeat++;
                 }
-                if (countRepeat > 1) {
+                if (countRepeat > 0) {
                     return false;
                 }
-
             }
         }
 
