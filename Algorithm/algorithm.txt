@@ -87,44 +87,80 @@ isDomain()
 6. Return the value.
 
 ---------------------------------------
+isDomain-Xuerun
+1.	Create method with the required input data type and output data type.
+2.	Convert all characters to lower case
+3.	Split the input string by '.' into an array called split with two substrings.
+4.	Check if the string length not equal to 2
+4.1.	Set the length of split array into an integer
+4.2.	If the split array length is not 2, then number of periods is not 1, thus invalid domain and return false
+4.3.	If the number of split portions is 2, continue 
+5.	Check if the first portion contains at least one character
+5.1.	Get the first portion from the split array
+5.2.	Set the string length of first portion as an integer
+5.3.	If the length is less than 1, return false and terminate 
+5.4.	If equal or greater than 1, continue 
+6.	Check if the first portion contains only alphanumeric characters, periods, and dashes
+6.1.	Loop all characters in the first portion
+6.2.	Check if the char is not a valid domain character
+6.2.1.	 If yes, return false and terminate
+6.2.2.	 If no, continue
+6.3.	Check if the char is a special char
+6.3.1.	If yes, check if the special char is the last char of domain
+6.3.1.1.	If yes, return false and terminate
+6.3.1.2.	If no, check if the next char after this special char is not an alphanumeric char
+6.3.1.2.1.	If yes, return false and terminate
+6.3.1.2.2.	If no, continue with the second portion
+7.	Check if the second  portion contains at least two characters
+7.1.	Get the second portion from the split array
+7.2.	Set the string length of first portion as an integer
+7.3.	If the length is less than 2, return false and terminate 
+7.4.	If equal or greater than 2, continue 
+8.	Check if the second portion contains only letters of the alphabet
+8.1.	Loop all characters in the second portion
+8.2.	Set the character as a char
+8.3.	If the character is not an alphabet within ‘a’ to ‘z’, return false and terminate
+8.4.	If the character is within ‘a’ to ‘z’, the second portion is valid
+9.	If the code executes to here, the domain is valid and return true
+----------------------------------------------------
 Procedure isEmail
-1.	take an email address as a string input
-2.	check if the string contains only one '@' sign
-2.1	if no, return false and terminate
-2.2	if yes, continue
-3.	parse email string
-3.1	get string before '@' sign as prefix
-3.2	get string after '@' sign as domain
-4.	check the strings obtained in the above step
-if string prefix is a valid prefix AND string domain is a valid domain, return true;
+1.	Take an email address as a string input
+2.	Check if the string contains only one '@' sign
+2.1	If no, return false and terminate
+2.2	If yes, continue
+3.	Parse email string
+3.1	Get string before '@' sign as prefix
+3.2	Get string after '@' sign as domain
+4.	Check the strings obtained in the above step
+5. If string prefix is a valid prefix AND string domain is a valid domain, return true;
 otherwise, return false
 -----------------------------------------
 Procedure isUsername
-1.	take an email address as a string input
-2.	check if the string contains seven or less characters
-2.1	set the length of string as an integer
-2.2	if the length is larger than 7, return an empty string and terminate
-2.3	if smaller than 7, continue
-3.	check if the first character is a period, or dash
-3.1	if no, return an empty string and terminate 
-3.2	if yes, continue
-4.	check if the string contains only alphanumeric character, periods, dashes, or an exclamation point
-4.1	loop through all characters
-4.2	set the character at an index location as a char
-4.3	check if char is not a domain char or an exclamation point
-4.3.1	if yes, return an empty string and terminate
-4.3.2	if no, continue
-4.4	check if char is an alphanumeric character
-4.4.1	set a false Boolean flag for alphanumeric
-4.4.2	if the char is an alphanumeric character, the Boolean flag is true
-4.4.3	if not, check if this char is a special char
-4.4.3.1	if yes, check if this special char is the last char of username
-4.4.3.1.1	if yes, return an empty string and terminate
-4.4.3.1.2	if no, check if the next char after this special char is not an alphanumeric char
-4.4.3.1.2.1	if yes, return an empty string and terminate
-4.4.3.1.2.2	if no, continue
-4.5	if the Boolean flag is false, return an empty string and terminate
-4.6	if the string meets all the conditions listed above, return the username in lower case
+1.	Take an email address as a string input
+2.	Check if the string contains seven or less characters
+2.1	Set the length of string as an integer
+2.2	If the length is larger than 7, return an empty string and terminate
+2.3	If smaller than 7, continue
+3.	Check if the first character is a period, or dash
+3.1	If no, return an empty string and terminate 
+3.2	If yes, continue
+4.	Check if the string contains only alphanumeric character, periods, dashes, or an exclamation point
+4.1	Loop through all characters
+4.2	Set the character at an index location as a char
+4.3	Check if char is not a domain char or an exclamation point
+4.3.1	If yes, return an empty string and terminate
+4.3.2	If no, continue
+4.4 Check if char is an alphanumeric character
+4.4.1	Set a false Boolean flag for alphanumeric
+4.4.2	If the char is an alphanumeric character, the Boolean flag is true
+4.4.3	If not, check if this char is a special char
+4.4.3.1	If yes, check if this special char is the last char of username
+4.4.3.1.1	If yes, return an empty string and terminate
+4.4.3.1.2	If no, check if the next char after this special char is not an alphanumeric char
+4.4.3.1.2.1	If yes, return an empty string and terminate
+4.4.3.1.2.2	If no, continue
+4.5	After finishing the loop, if the Boolean flag is false, return an empty string and terminate
+4.6	If the string meets all the conditions listed above, return the username in lower case
 
 ------------------------------------------
 
@@ -149,5 +185,29 @@ isSafePassword()
 
 
 -------------------------------------
+safePassword-Xuerun
+1.	Take the password from user as a string input
+2.	Check if the password contains min 7 chars and max 15 chars
+2.1	Set the length of the password as an integer
+2.2	If the length is less than 7 or more than 15, return false and terminate
+2.3	If the length is between 7 to 15, continue
+3.	Check if the characters in the string meets the required conditions
+3.1	Loop through all characters in the password
+3.2	Set the character of password as char
+3.3	Check if two characters appear consecutively
+3.3.1	If the character is same as the next character, return false and terminate
+3.3.2	If no, continue
+3.4	Check if the string contains at least alphanumeric characters
+3.4.1	Set the count occurrence of alphanumeric characters as an integer
+3.4.2	If the character is an alphanumeric character, the count integer increase by 1
+3.5	Check if the string contain at least one uppercase letter one lowercase letter, one number, and one period, dash or underscore.
+3.5.1	Create four false Boolean flag for uppercase, lowercase, number and special characters
+3.5.2	If the character is an uppercase character, uppercase flag is true
+3.5.3	If the character is a lowercase character, lowercase flag is true
+3.5.4	If the character is a number, number flag is true
+3.5.5	If the character is a special character, special char flag is true
+3.6	After finishing the loop, if the count occurrence of alphanumeric character is greater than 1, return false and terminate
+3.7	If  all four Boolean flags are true, the password is valid, if not, return false and the password is invalid
+
 
    
