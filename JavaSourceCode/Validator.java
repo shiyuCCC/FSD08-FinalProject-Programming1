@@ -1,11 +1,6 @@
-
 public class Validator {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
-		
-		System.out.print(singleAtSign("A@b@c@d"));
+	public static void main(String[] args) {		
+		System.out.print(isUsername("userName"));
 	}
 	
 	public static boolean isAlphaNum(char input) {
@@ -224,7 +219,7 @@ public class Validator {
         return username.toLowerCase();
     }
 
-	
+
     public static Boolean safePassword(String password) {
         int length = password.length();
         Boolean uppercaseFlag = false;
