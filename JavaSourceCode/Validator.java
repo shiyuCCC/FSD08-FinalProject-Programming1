@@ -1,6 +1,6 @@
 public class Validator {
 	public static void main(String[] args) {		
-		System.out.print(isUsername("userName"));
+		System.out.print(safePassword ("Pa55w0RDis0k"));
 	}
 	
 	public static boolean isAlphaNum(char input) {
