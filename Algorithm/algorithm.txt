@@ -74,7 +74,46 @@ isDomain()
 2. Split the input string by '.' 
 
 ---------------------------------------
+Procedure isEmail
+1.	take an email address as a string input
+2.	check if the string contains only one '@' sign
+2.1	if no, return false and terminate
+2.2	if yes, continue
+3.	parse email string
+3.1	get string before '@' sign as prefix
+3.2	get string after '@' sign as domain
+4.	check the strings obtained in the above step
+if string prefix is a valid prefix AND string domain is a valid domain, return true;
+otherwise, return false
+-----------------------------------------
+Procedure isUsername
+1.	take an email address as a string input
+2.	check if the string contains seven or less characters
+2.1	set the length of string as an integer
+2.2	if the length is larger than 7, return an empty string and terminate
+2.3	if smaller than 7, continue
+3.	check if the first character is a period, or dash
+3.1	if no, return an empty string and terminate 
+3.2	if yes, continue
+4.	check if the string contains only alphanumeric character, periods, dashes, or an exclamation point
+4.1	loop through all characters
+4.2	set the character at an index location as a char
+4.3	check if char is not a domain char or an exclamation point
+4.3.1	if yes, return an empty string and terminate
+4.3.2	if no, continue
+4.4	check if char is an alphanumeric character
+4.4.1	set a false Boolean flag for alphanumeric
+4.4.2	if the char is an alphanumeric character, the Boolean flag is true
+4.4.3	if not, check if this char is a special char
+4.4.3.1	if yes, check if this special char is the last char of username
+4.4.3.1.1	if yes, return an empty string and terminate
+4.4.3.1.2	if no, check if the next char after this special char is not an alphanumeric char
+4.4.3.1.2.1	if yes, return an empty string and terminate
+4.4.3.1.2.2	if no, continue
+4.5	if the Boolean flag is false, return an empty string and terminate
+4.6	if the string meets all the conditions listed above, return the username in lower case
 
+------------------------------------------
 
 isSafePassword()
 
