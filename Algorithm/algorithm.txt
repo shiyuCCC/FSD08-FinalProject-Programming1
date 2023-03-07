@@ -15,6 +15,7 @@ isSpecialChar()
 
 ------------------------------------
 
+
 isPrefix()
 
 1. Create method with the required input data type and output data type.
@@ -51,4 +52,7 @@ isSafePassword()
    if not return false.
    
 6. Output the return value
+
+-------------------------------------
+
    
