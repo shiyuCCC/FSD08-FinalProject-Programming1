@@ -15,13 +15,14 @@ public class Validator {
 	
 	
 	public static boolean isSpecialChar(char a, boolean b) {
+		//check if the input is a reuired special character.
 		return ((a == '-' || a =='.') || (a == '_' && b == true));
 		
 	}
 	
 	
 	public static boolean isPrefixChar(char a) {
-		
+		//check if the input is an alphanumeric character or a special character.
 		if ((isAlphaNum(a) == true) || (isSpecialChar(a, true) == true)) {
 			return true;
 		}else {
@@ -31,6 +32,7 @@ public class Validator {
 	
 	
 	public static boolean isDomainChar(char a) {
+		//check if the input is an alphanumeric character or a required special character.
 		if ((isAlphaNum(a) == true) || (isSpecialChar(a, false) == true)) {
 			return true;
 		}else {
@@ -52,7 +54,7 @@ public class Validator {
 	}
 
 	// fetchBeforeAt() and fetchAfterAt() are very similar. Both method using
-    // split() method, the only difference is the
+    // split() method, the only difference is 
     // To get the beginning of an email address
     public static String fetchBeforeAt(String email) {
         return email.split("@")[0];
