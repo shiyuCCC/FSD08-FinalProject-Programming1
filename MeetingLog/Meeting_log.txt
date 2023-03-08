@@ -60,4 +60,21 @@ Shiyu- Explication of the planning and development of the code
        Individual assignments
 Xuerun-Problems that arose during the development of the website
        -Overview of the project,workload,difficulty,comprehension
+       
+       
+----------------
+4th Meeting Summary:
+
+Date: March 8, 2023 
+Attendees: Xuerun, Shiyu
+Meeting Minutes Taker: Shiyu
+
+1. The group discussed and resolved several issues related to word formatting and pseudo code.
+2. The team members assigned one member to submit the final file.
+
+Action Items:
+
+1. Revise the details of the project according to the discussion during the meeting.
+2. Double-check the final file.
+3. Submit the final file to Lea.
 
