@@ -1,16 +1,15 @@
+//Shiyu Cai
+//Xuerun Wang 2340550
 public class Validator {
 	
-	public static void main(String[] args) {	
-		
-		System.out.print(isDomain("and..so "));
-		
+	public static void main(String[] args) {		
 	}
 	
 	public static boolean isAlphaNum(char input) {
 		
 		//check if the input is alphanumeric.
 		
-		return (input >= 'a'&& input<='z')||(input >= 'A' && input<='Z')||(input>='0'&&input<='9');
+		return (input >= 'a'&& input <= 'z')||(input >= 'A' && input <= 'Z')||(input >= '0'&&input <= '9');
 		
 	}
 	
@@ -23,7 +22,7 @@ public class Validator {
 	
 	public static boolean isPrefixChar(char a) {
 		
-		if ((isAlphaNum(a)== true) || (isSpecialChar(a, true)==true)) {
+		if ((isAlphaNum(a) == true) || (isSpecialChar(a, true) == true)) {
 			return true;
 		}else {
 			return false;
@@ -32,7 +31,7 @@ public class Validator {
 	
 	
 	public static boolean isDomainChar(char a) {
-		if ((isAlphaNum(a)== true) || (isSpecialChar(a, false)==true)) {
+		if ((isAlphaNum(a) == true) || (isSpecialChar(a, false) == true)) {
 			return true;
 		}else {
 			return false;
@@ -44,9 +43,10 @@ public class Validator {
 	public static boolean singleAtSign(String a) {
 		int count = 0;
 		//for loop to check each char in the string and record the times of @
-		for ( int i =0;i<a.length();i++) {
+		for ( int i = 0;i < a.length();i++) {
 			if (a.charAt(i) == '@') {
-				count++;} else;
+				count++;
+            }
 		}
 		return (count == 1);
 	}
@@ -99,6 +99,7 @@ public class Validator {
         // if the code executes to here, it means the prefex is valid
         return true;
     }
+
 
     public static Boolean isDomain(String domain) {
         // convert all characters to lower case
@@ -162,6 +163,7 @@ public class Validator {
         return true;
     }
 	
+
     public static Boolean isEmail(String email) {
         if (!singleAtSign(email)) {
             return false;
@@ -280,7 +282,5 @@ public class Validator {
 
         return true;
     }
-    
-    
     
 }
