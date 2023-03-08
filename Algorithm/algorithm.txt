@@ -2,95 +2,78 @@ Algorithm for methods
 
 isAlphaNum()
 
-1.Create method with the required input data type and output data type.
-2.Check if the input is alphanumeric. Use ASCII values
-3.Return true else return false
+1.Create method with the required input data type and output data type
+2.Check if the input is alphanumeric character. Use ASCII values
+3.If the input is an alphanumeric character, return true. Otherwise, return false
 
 -------------------------------
 
 isSpecialChar()
 
-1.Create method with the required input data type and output data type.
+1.Create method with the required input data type and output data type
 2.Check if each character meets the requirement
-2.Return true else return false
+2.If the input is a required sepcial character, return true. Otherwise, return false
 
 ------------------------------------
 isPrefixChar()
 
-1.Create method with the required input data type and output data type.
+1.Create method with the required input data type and output data type
 2.Check if the input character is alphanumeric (using isAlphaNum()) or if it's special characters (using isSpecialChar())
-3.Return true else return false
+3.If the input meets the requirement, return true. Otherwise, return false
 
 ------------------------------------
 isDomainChar()
 
-1.Create method with the required input data type and output data type.
-2.Check if the character is alphanumeric character(using isAlphaNum()) or if it's dash or period (using isSpecialChar() with the second value set as false.)
-3.Return true else return false
+1.Create method with the required input data type and output data type
+2.Check if the character is alphanumeric character(using isAlphaNum()) or if it's dash or period (using isSpecialChar() with the second value set as false)
+3.If the input meets the requirement, return true. Otherwise, return false
 
 -------------------------------------
 singleAtSign()
 
-1.Create method with the required input data type and output data type.
+1.Create method with the required input data type and output data type
 2.Initialize int count to record the appearance of '@'
 3.Check every character in the string and +1 to int count if the character is '@'
-4.Check if count == 1
-5.Return true else return false.
+4.Check if the variable count equals 1
+5.If the variable count equals, return true. Otherwise, return false
 
 --------------------------------------
 fetchBeforeAt()
 
-1.Create method with the required input data type and output data type.
+1.Create method with the required input data type and output data type
 2.Split the input string by '@' and fetch the part before '@' using .split()[] method
-3.Return the value.
+3.Return the value
 
 --------------------------------------- 
-fetchBeforeAt()
+fetchAfterAt()
 
-1.Create method with the required input data type and output data type.
+1.Create method with the required input data type and output data type
 2.Split the input string by '@' and fetch the part after '@' using .split()[] method
-3.Return the value.
+3.Return the value
 
 ----------------------------------------
 
 
 isPrefix()
 
-1. Create method with the required input data type and output data type.
-2. Initialize an int variable as the length of the input string.
+1. Create method with the required input data type and output data type
+2. Initialize an int variable as the length of the input string
 3. Check if string meets the requirements
      3.1 Check if the there is at least one character, if length<1 then boolean is false
      3.2 Check if the first character is alphanumeric by using existing method isAlphanumeric(), if not return false
      3.3 Loop every character to check if they are all prefix, if not return false
      If yes, 
         3.2.1 check if the underscore, period, or dash is the last character, if yes, return false
-        3.2.2 check if the character behind underscore, period, or dash is alphanumeric, if not, return false.
-4. Return the value
+        3.2.2 check if the character behind underscore, period, or dash is alphanumeric, if not, return false
+4. If the code executes to here, the input is valid and return true
 -------------------------------------
 
-isDomain()
 
-1. Create method with the required input data type and output data type.
-2. Split the input string by '.' into an array called split with two substrings.
-3. Initialize an int variable numSplit to store the numbers of the characters in the input string.
-4. Check if the string length not equal to 2, if not return false.
-5. Check the characters contained in the two portions meet the requirement.
-   5.1 Initialize two string variables of the substrings of the splited array as firstPortion and secondPortion.
-   5.2 Initialize two int variables of the length of the two portions.
-   5.3 Loop each character to check
-       5.3.1 Check if any of the characters of the firstPortion isn't a alphanumeric or period, dash, return false.
-       5.3.2 Check if the character in the firstPortion is a dash, period or underscore.
-          5.3.2.1 Check if it is the last character, if yes return false
-          5.3.2.2 Check if the character behind it isn't a alphanumeric character, if not return false.
-   5.4 Check if the length of the second portion < 2, if yes return false
-   5.5 Check if the characters in the secondPortion are between a to z, if not return false.
-6. Return the value.
+isDomain
 
----------------------------------------
-isDomain-Xuerun
-1.	Create method with the required input data type and output data type.
+1.	Create method with the required input data type and output data type
 2.	Convert all characters to lower case
-3.	Split the input string by '.' into an array called split with two substrings.
+3.	Split the input string by '.' into an array called split with two substrings
 4.	Check if the string length not equal to 2
 4.1.	Set the length of split array into an integer
 4.2.	If the split array length is not 2, then number of periods is not 1, thus invalid domain and return false
@@ -124,6 +107,7 @@ isDomain-Xuerun
 9.	If the code executes to here, the domain is valid and return true
 ----------------------------------------------------
 Procedure isEmail
+
 1.	Take an email address as a string input
 2.	Check if the string contains only one '@' sign
 2.1	If no, return false and terminate
@@ -135,7 +119,9 @@ Procedure isEmail
 4.1 If string prefix is a valid prefix AND string domain is a valid domain, return true;
 otherwise, return false
 -----------------------------------------
+
 Procedure isUsername
+
 1.	Take an email address as a string input
 2.	Check if the string contains seven or less characters
 2.1	Set the length of string as an integer
@@ -164,28 +150,8 @@ Procedure isUsername
 
 ------------------------------------------
 
-isSafePassword()
+safePassword
 
-1. Create method with the required input data type and output data type.
-2. Initialize int variable to store the length of the input password
-3. Initialize and set the boolean variables of uppercase,lowercase,number, special characters as false.
-4. Initialize int variable countAN to count occurance of alphanumeric char.
-5. Check if the length is between 7 and 15, if not return false.
-6. Loop every character in the password string.
-   6.1 Initialize char variable of each character.
-   6.2 Check if the two same chars appear consecutively, if yes return false
-   6.3 If the char is an alphanumeric character, + 1 to the count variable created in step 4
-   6.4 If the char is an uppercase char, set boolean uppearcase to true.
-   6.5 If the char is a lowercase char, set boolean lowercase to true.
-   6.6 If the char is a number char, set boolean number to true.
-   6.7 If the char is a special char, set boolean special characters to true.
- 7. Check if the countAN <1, return false.
- 8. Check if any of the booleans of of uppercase,lowercase,number, special characters is false, return false.
- 9. Return the value.
-
-
--------------------------------------
-safePassword-Xuerun
 1.	Take the password from user as a string input
 2.	Check if the password contains min 7 chars and max 15 chars
 2.1	Set the length of the password as an integer
