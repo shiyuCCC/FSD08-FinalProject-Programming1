@@ -1,4 +1,4 @@
-//Shiyu Cai
+//Shiyu Cai 2339433
 //Xuerun Wang 2340550
 public class Validator {
 	
