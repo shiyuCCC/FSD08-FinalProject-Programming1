@@ -132,7 +132,7 @@ Procedure isEmail
 3.1	Get string before '@' sign as prefix
 3.2	Get string after '@' sign as domain
 4.	Check the strings obtained in the above step
-5. If string prefix is a valid prefix AND string domain is a valid domain, return true;
+4.1 If string prefix is a valid prefix AND string domain is a valid domain, return true;
 otherwise, return false
 -----------------------------------------
 Procedure isUsername
